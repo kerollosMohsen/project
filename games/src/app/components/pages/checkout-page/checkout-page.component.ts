@@ -54,7 +54,6 @@ export class CheckoutPageComponent implements OnInit {
       next:() => {
         localStorage.removeItem('cart')
         this.router.navigateByUrl('/');
-        window.location.reload();
       },
       error:(errorResponse) => {
         console.log(errorResponse.error)
