@@ -1,0 +1,38 @@
+.continer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.details{
+    width: 28rem;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.button button{
+    border-radius: 1rem;
+    border: none;
+    padding: 0.5rem;
+    opacity: 0.9;
+    outline: none;
+    color: white;
+    background-color: #FF5463;
+    display: block;
+    margin:1rem auto;
+    width: 10rem;
+}
+.button button:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+h1{
+margin: 1.8rem;
+text-align: center;
+}
+.login{
+text-align: center;
+
+}

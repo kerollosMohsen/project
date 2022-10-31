@@ -1,0 +1,34 @@
+<app-title></app-title>
+<app-not-found *ngIf="!cart.totalCount"></app-not-found>
+<div class="continer">
+    <ul *ngIf="cart.totalCount">
+        <li *ngFor="let cartItem of cart.items">
+            <div>
+                <img src="http://localhost:3000/{{cartItem.product.imageUrl}}"[alt]="cartItem.product.title">
+            </div>
+            <div class="titleLink">
+                <a routerLink="/product/{{cartItem.product._id}}">
+                    {{cartItem.product.title}}
+                </a>
+            </div>
+            <div class="quan">Quantity : 
+<input type="number" #quantitySelect [value]="cartItem.quantity" (change)="changeQuantity(cartItem,quantitySelect.value)" min="1">
+            </div>
+            <div>
+                {{cartItem.price |currency:" EGP "}}
+            </div>
+            <div>
+                <button class="remove-button" (click)="removeFromCart(cartItem)">
+                    Remove
+                </button>
+            </div>
+        </li>
+    </ul>
+    <div class="checkout" *ngIf="cart.totalCount">
+        <div>
+            <div class="product-count">{{cart.totalCount}}</div>
+            <div class="product-price">{{cart.totalPrice|currency:" EGP "}}</div>
+        </div>
+        <a routerLink="/checkout-page">proceed to checkout</a>
+    </div>
+</div>

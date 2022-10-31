@@ -1,0 +1,35 @@
+<app-search></app-search>
+<app-not-found *ngIf="products.length==0"></app-not-found>
+<ul>
+    <li *ngFor="let product of products">
+
+
+
+        <a routerLink="/product/{{product._id}}">
+            <img src="http://localhost:3000/{{product.imageUrl}}" [alt]="product.title">
+            <div class="content">
+                <div class="title">
+                    {{product.title}}
+                </div>
+                <span class="favorite {{product.favorite?'':'not'}}"> ❤ </span>
+                <div class="stars">
+                    <star-rating [value]="product.stars"[totalstars]="5"checkedcolor="#FF5463"  uncheckedcolor="black"size="22px"[readonly]="true"></star-rating>
+                </div>
+                <div class="product-item-footer">
+                    <div class="categorie">
+                        <span *ngFor="let categorie of product.categories">
+                            {{categorie}}
+                        </span>
+                    </div>
+                    <div class="price">
+                        <span>{{product.price | currency:" EGP "}}</span>
+                    </div>
+                </div>
+               
+
+            </div>
+        </a>
+
+
+    </li>
+</ul>

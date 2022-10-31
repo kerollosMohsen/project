@@ -1,0 +1,23 @@
+h1{
+    font-size: 2rem;
+    font-weight: 200;
+    color: #FF5463;
+}
+div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 2rem;
+    padding: 2rem;
+    flex-direction: column;
+}
+a{
+    border-radius: 1rem;
+    border: none;
+    padding: 0.5rem;
+    opacity: 0.9;
+    outline: none;
+    color: white;
+    background-color: #FF5463;
+    display: block;
+}
